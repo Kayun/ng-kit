@@ -133,6 +133,46 @@
           }
         }
       }
+    },
+    "inline-script": {
+      "root": "projects/inline-script",
+      "sourceRoot": "projects/inline-script/src",
+      "projectType": "library",
+      "prefix": "ng-kit",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/inline-script/tsconfig.lib.json",
+            "project": "projects/inline-script/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/inline-script/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/inline-script/src/test.ts",
+            "tsConfig": "projects/inline-script/tsconfig.spec.json",
+            "karmaConfig": "projects/inline-script/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/inline-script/tsconfig.lib.json",
+              "projects/inline-script/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-kit"

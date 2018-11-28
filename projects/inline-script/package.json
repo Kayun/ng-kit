@@ -1,0 +1,9 @@
+{
+  "name": "@ng-kit/inline-script",
+  "version": "0.1.0",
+  "author": "Artyom Kayun <kayun.artem@gmail.com>",
+  "peerDependencies": {
+    "@angular/common": ">=4.2.4 || <=7.1.1",
+    "@angular/core": ">=4.2.4 || <=7.1.1"
+  }
+}

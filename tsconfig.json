@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "inline-script": [
+        "dist/inline-script"
+      ],
+      "inline-script/*": [
+        "dist/inline-script/*"
+      ]
+    }
   }
 }

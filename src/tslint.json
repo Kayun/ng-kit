@@ -13,5 +13,6 @@
             "ng-kit",
             "kebab-case"
         ]
-    }
+    },
+  "no-floating-promises": true
 }
