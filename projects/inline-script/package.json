@@ -1,5 +1,5 @@
 {
-  "name": "@ng-kit/inline-script",
+  "name": "@ng-assets/inline-script",
   "version": "0.1.0",
   "description": "Angular Component for adding inline scripts to angular applications",
   "keywords": [
@@ -9,17 +9,17 @@
     "tag",
     "script",
     "inline",
-    "ng-kit"
+    "ng-assets"
   ],
   "license": "MIT",
   "author": "Artyom Kayun <kayun.artem@gmail.com> (https://github.com/kayun)",
-  "homepage": "https://github.com/kayun/ng-kit/tree/master/projects/inline-script",
+  "homepage": "https://github.com/kayun/ng-assets/tree/master/projects/inline-script#readme",
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/kayun/ng-kit.git"
+    "url" : "https://github.com/kayun/ng-assets.git"
   },
   "bugs": {
-    "url": "https://github.com/kayun/ng-kit/labels/inline-script"
+    "url": "https://github.com/kayun/ng-assets/labels/inline-script"
   },
   "peerDependencies": {
     "@angular/common": ">=4.2.4 || <=7.1.1",
