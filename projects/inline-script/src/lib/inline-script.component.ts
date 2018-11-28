@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Renderer2, TemplateRef, ViewChild } from '@angular/core'
 
 @Component({
-  selector: 'ng-kit-inline-script',
+  selector: 'nga-inline-script',
   templateUrl: './inline-script.component.html',
   styles: []
 })

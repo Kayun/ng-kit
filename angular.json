@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "ng-kit",
+      "prefix": "nga",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -138,7 +138,7 @@
       "root": "projects/inline-script",
       "sourceRoot": "projects/inline-script/src",
       "projectType": "library",
-      "prefix": "ng-kit",
+      "prefix": "nga",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
