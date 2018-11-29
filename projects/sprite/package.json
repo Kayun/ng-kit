@@ -1,0 +1,30 @@
+{
+  "name": "@ng-assetd/sprite",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "sprite",
+    "angular",
+    "svg",
+    "icon",
+    "use",
+    "inline",
+    "svg-sprite",
+    "ng-assets"
+  ],
+  "license": "MIT",
+  "author": "Artyom Kayun <kayun.artem@gmail.com> (https://github.com/kayun)",
+  "homepage": "https://github.com/kayun/ng-assets/tree/master/projects/sprite",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/kayun/ng-assets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kayun/ng-assets/labels/sprite"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=4.2.4 || <=7.1.1",
+    "@angular/core": ">=4.2.4 || <=7.1.1",
+    "@ng-assets/inline-script": "^0.1.0"
+  }
+}

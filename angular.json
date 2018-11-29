@@ -173,6 +173,46 @@
           }
         }
       }
+    },
+    "sprite": {
+      "root": "projects/sprite",
+      "sourceRoot": "projects/sprite/src",
+      "projectType": "library",
+      "prefix": "nga",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sprite/tsconfig.lib.json",
+            "project": "projects/sprite/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/sprite/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sprite/src/test.ts",
+            "tsConfig": "projects/sprite/tsconfig.spec.json",
+            "karmaConfig": "projects/sprite/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sprite/tsconfig.lib.json",
+              "projects/sprite/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-assets"

@@ -23,6 +23,12 @@
       ],
       "inline-script/*": [
         "dist/inline-script/*"
+      ],
+      "sprite": [
+        "dist/sprite"
+      ],
+      "sprite/*": [
+        "dist/sprite/*"
       ]
     }
   }
