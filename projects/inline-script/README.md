@@ -9,7 +9,7 @@ Install library
 ```
 npm install --save-dev @ng-assets/inline-script
 ```
-Import `InlineScriptModule` into the root module or to any other module
+Import `InlineScriptModule` into the root module
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser'
@@ -24,28 +24,7 @@ import { AppComponent } from './app.component'
   ],
   imports: [
     BrowserModule,
-    InlineScriptModule
-  ],
-  providers: [],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule {}
-```
-or add a declaration for `InlineScriptComponent`
-```typescript
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { InlineScriptComponent } from '@ng-assets/inline-script'
-
-import { AppComponent } from './app.component'
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    InlineScriptComponent
-  ],
-  imports: [
-    BrowserModule
+    InlineScriptModule.forRoot()
   ],
   providers: [],
   bootstrap: [ AppComponent ]
@@ -59,9 +38,28 @@ export class AppComponent {
 }
 ```
 ```html
-<nga-inline-script>
-  console.log({{ message }})
-</nga-inline-script>
+<nga-inline-script script="
+  (function(w) {
+    w.field = '{{ message }}'
+    console.log(w.field)
+  })(window)
+"></nga-inline-script>
+```
+or
+```typescript
+export class AppComponent {
+  public message = 'It`s work!';
+  
+  public script = `
+    (function(w) {
+      w.field = '${ this.message }'
+      console.log(w.field)
+    })(window)
+  `
+}
+```
+```html
+<nga-inline-script [script]="script"></nga-inline-script>
 ```
 Script will correctly execute and display `It's work!` in the console
 
