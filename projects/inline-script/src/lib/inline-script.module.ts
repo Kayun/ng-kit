@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
 
 import { InlineScriptComponent } from './inline-script.component'
-import { InlineScriptService } from './inline-script.service'
-import { IInlineScript } from './inline-script.interface'
+import { InlineScriptConfig } from './inline-script.config'
+import { inlineScriptDefaultIdGeneratorProvider } from './inline-script.provider'
 
 @NgModule({
   declarations: [ InlineScriptComponent ],
@@ -11,14 +11,11 @@ import { IInlineScript } from './inline-script.interface'
 })
 export class InlineScriptModule {
 
-  public static forRoot (): ModuleWithProviders {
+  public static forRoot (config: InlineScriptConfig = {}): ModuleWithProviders {
     return {
       ngModule: InlineScriptModule,
       providers: [
-        {
-          provide: IInlineScript,
-          useClass: InlineScriptService
-        }
+        Boolean(config.idGenerator) ? config.idGenerator : inlineScriptDefaultIdGeneratorProvider
       ]
     }
   }

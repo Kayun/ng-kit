@@ -4,8 +4,7 @@ import {
 } from '@angular/core'
 import { isPlatformBrowser, isPlatformServer } from '@angular/common'
 import { makeStateKey, StateKey, TransferState } from '@angular/platform-browser'
-
-import { IInlineScript } from './inline-script.interface'
+import { IdGenerator } from '@ng-assets/core'
 
 @Component({
   selector: 'nga-inline-script',
@@ -17,22 +16,22 @@ export class InlineScriptComponent implements OnInit {
   @Input()
   private script: string = ''
 
-  private element: HTMLElement = null
+  private readonly element: HTMLElement = null
 
-  private transferKey: StateKey<boolean> = null
+  private readonly transferKey: StateKey<boolean> = null
 
   constructor (
     private renderer: Renderer2,
     private elementRef: ElementRef,
-    private inlineScriptService: IInlineScript,
+    private idGenerator: IdGenerator,
     @Optional() private transfer: TransferState,
     @Inject(PLATFORM_ID) private platform: string
   ) {
     this.element = this.elementRef.nativeElement
 
     if (Boolean(this.transfer)) {
-      const id = this.inlineScriptService.getScriptId()
-      this.transferKey = makeStateKey(this.makeId(id))
+      const id = this.idGenerator.getId()
+      this.transferKey = makeStateKey(id)
     }
   }
 
@@ -65,9 +64,5 @@ export class InlineScriptComponent implements OnInit {
     if (isPlatformServer(this.platform) && Boolean(this.transfer)) {
       this.transfer.set(this.transferKey, true)
     }
-  }
-
-  private makeId (id: number): string {
-    return `nga-sprite-universal-${ id }`
   }
 }
