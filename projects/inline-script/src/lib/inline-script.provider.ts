@@ -1,5 +1,6 @@
 import { FactoryProvider } from '@angular/core'
 import { IdGenerator } from '@ng-assets/core'
+import { INLINE_SCRIPT_ID_GENERATOR } from './inline-script.config'
 
 export class InlineScriptDefaultIdGenerator implements IdGenerator {
 
@@ -23,6 +24,6 @@ export function InlineScriptDefaultIdGeneratorFactory (): IdGenerator {
 }
 
 export const inlineScriptDefaultIdGeneratorProvider: FactoryProvider = {
-  provide: IdGenerator,
+  provide: INLINE_SCRIPT_ID_GENERATOR,
   useFactory: InlineScriptDefaultIdGeneratorFactory
 }

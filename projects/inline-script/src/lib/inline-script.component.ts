@@ -5,6 +5,7 @@ import {
 import { isPlatformBrowser, isPlatformServer } from '@angular/common'
 import { makeStateKey, StateKey, TransferState } from '@angular/platform-browser'
 import { IdGenerator } from '@ng-assets/core'
+import { INLINE_SCRIPT_ID_GENERATOR } from './inline-script.config'
 
 @Component({
   selector: 'nga-inline-script',
@@ -23,8 +24,8 @@ export class InlineScriptComponent implements OnInit {
   constructor (
     private renderer: Renderer2,
     private elementRef: ElementRef,
-    private idGenerator: IdGenerator,
     @Optional() private transfer: TransferState,
+    @Inject(INLINE_SCRIPT_ID_GENERATOR) private idGenerator: IdGenerator,
     @Inject(PLATFORM_ID) private platform: string
   ) {
     this.element = this.elementRef.nativeElement
